@@ -19,20 +19,22 @@ static int iqs5xx_i2c_seq_read_16(const struct iqs5xx_config *cfg, uint16_t addr
     return i2c_write_read_dt(&cfg->i2c, addr_buf, 2, buf, len);
 }
 
+/* Longest register write of this driver, in bytes. */
+#define IQS5XX_MAX_WRITE_LEN 16
+
 static int iqs5xx_i2c_write_16(const struct iqs5xx_config *cfg, uint16_t addr, const uint8_t *data,
                                size_t len) {
-    uint8_t *tx_buf = k_malloc(len + 2);
-    if (!tx_buf) {
-        return -ENOMEM;
+    /* On the stack: ZMK builds without a kernel heap, so k_malloc() does not link. */
+    uint8_t tx_buf[2 + IQS5XX_MAX_WRITE_LEN];
+
+    if (len > IQS5XX_MAX_WRITE_LEN) {
+        return -EINVAL;
     }
     tx_buf[0] = (uint8_t)((addr >> 8) & 0xFF);
     tx_buf[1] = (uint8_t)(addr & 0xFF);
     memcpy(&tx_buf[2], data, len);
 
-    int ret = i2c_write_dt(&cfg->i2c, tx_buf, len + 2);
-    k_free(tx_buf);
-
-    return ret;
+    return i2c_write_dt(&cfg->i2c, tx_buf, len + 2);
 }
 
 static int iqs5xx_i2c_write_byte_16(const struct iqs5xx_config *cfg, uint16_t addr, uint8_t val) {

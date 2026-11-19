@@ -24,13 +24,13 @@ config INPUT_AZOTEQ_IQS5XX_INIT_PRIORITY
       Driver initialization priority for the IQS5xx driver.
       Lower values initialize earlier.
 
-if ZMK_MOUSE
+if ZMK_POINTING
 config ZMK_INPUT_AZOTEQ_IQS5XX_IDLE_SLEEPER
     bool "IQS5xx Sleep linked to ZMK idle state"
     default n
     help
       If enabled, the driver will suspend/resume the IQS5xx based on
       ZMK's activity state changes (e.g. powering down when idle).
-endif # ZMK_MOUSE
+endif # ZMK_POINTING
 
 endif # INPUT_AZOTEQ_IQS5XX
