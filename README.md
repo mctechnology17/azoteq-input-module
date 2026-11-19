@@ -1,13 +1,13 @@
-> [!CAUTION]
-> THIS MODULE HAS NOT BEEN TESTED, SO I DO NOT RECOMMEND USING IT, IF YOU
-> INSTALL IT YOU DO IT AT YOUR OWN RISK !!!!
-
-Driver for the azoteq trackpad with ZMK software
-# Driver for the azoteq trackpad
-
 <!-- mc-follow-top:start -->
 <div align="center">
 
+  <a href="https://youtube.com/@mctechnology17">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_banner_dark.png?raw=true" />
+      <img alt="MC Technology" width="420px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_banner_light.png?raw=true" />
+    </picture>
+  </a>
+  <br>
   <a href="https://youtube.com/@mctechnology17"><img align="center" alt="MC Technology | YouTube" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/youtube.png" /></a>
   <a href="https://www.instagram.com/mctechnology17/"><img align="center" alt="MC Technology | Instagram" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/instagram.png" /></a>
   <a href="https://www.facebook.com/mctechnology17/"><img align="center" alt="MC Technology | Facebook" width="22px" src="https://github.com/mctechnology17/mctechnology17/blob/main/src/facebook.png" /></a>
@@ -15,6 +15,13 @@ Driver for the azoteq trackpad with ZMK software
 
 </div>
 <!-- mc-follow-top:end -->
+
+> [!CAUTION]
+> THIS MODULE HAS NOT BEEN TESTED, SO I DO NOT RECOMMEND USING IT, IF YOU
+> INSTALL IT YOU DO IT AT YOUR OWN RISK !!!!
+
+Driver for the azoteq trackpad with ZMK software
+# Driver for the azoteq trackpad
 
 # config example
 
